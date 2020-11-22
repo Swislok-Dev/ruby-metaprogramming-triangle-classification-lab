@@ -20,10 +20,10 @@ class Triangle
   end
 
   def valid_triangle?
-    if @s1 + @s2 + @s3 > 0
+    if @s1 + @s2 + @s3 > 2
       return
-    elsif negative?(@s3) || negative?(@s1) || negative?(@s2)
-      raise TriangleError
+    elsif positive?(@s3) || positive?(@s1) || positive?(@s2)
+      return
     else
       raise TriangleError
     end
