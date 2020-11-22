@@ -20,6 +20,12 @@ class Triangle
   end
 
   def valid_triangle?
+
+    ## Alternate method ## Syntactic sugar
+    # real_triangle = [(@s1 + @s2 > @s3), (@s1 + @s3 > @s2), (@s2 + @s3 > @s1)]
+    # [@s1, @s2, @s3].each { |s| real_triangle << false if s <= 0 }
+    # raise TriangleError if real_triangle.include?(false)
+
     if @s1 + @s2 <= @s3 || @s1 + @s3 <= @s2 || @s2 + @s3 <= @s1
       raise TriangleError
     elsif @s1 == 0 || @s2 == 0 || @s3 == 0
